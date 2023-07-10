@@ -24,7 +24,7 @@ export const Manage = () => {
     try {
       const tokenObj = JSON.parse(localStorage.getItem('token'));
       const token = tokenObj.token;
-      const response = await axios.get('http://localhost:5000/users', {
+      const response = await axios.get('https://final-backend-ten.vercel.app/users', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -42,7 +42,7 @@ export const Manage = () => {
     const updatedStatus = user.status === 'Enable' ? 'Disable' : 'Enable';
   
     axios
-      .put(`http://localhost:5000/users/${userId}/toggleStatus`, { status: updatedStatus }, {
+      .put(`https://final-backend-ten.vercel.app/users/${userId}/toggleStatus`, { status: updatedStatus }, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

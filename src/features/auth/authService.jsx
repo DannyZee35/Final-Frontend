@@ -5,7 +5,7 @@ import axios from "axios";
  
 const register = async (userData) => {
   try {
-    await axios.post("http://localhost:5000/signup", userData);
+    await axios.post("https://final-backend-ten.vercel.app/signup", userData);
     // Registration successful, no need to return any data
   } catch (error) {
     console.log(error.response); // Log the error response in the console
@@ -20,7 +20,7 @@ const register = async (userData) => {
 
 const login = async (userData) => {
   try {
-    const response = await axios.post("http://localhost:5000/login", userData);
+    const response = await axios.post("https://final-backend-ten.vercel.app/login", userData);
     if (response.data) {
       localStorage.setItem("token", JSON.stringify(response.data));
     }
